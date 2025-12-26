@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.0.3](https://github.com/eramitgupta/vue-toastification/compare/1.0.2...1.0.3) (2025-12-26)
+
 ## [1.0.2](https://github.com/eramitgupta/vue-toastification/compare/1.0.1...1.0.2) (2025-12-26)
 
 ## 1.0.1 (2025-12-26)
