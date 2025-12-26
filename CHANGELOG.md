@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1 (2025-12-26)
+
+
+### Bug Fixes
+
+* update gitignore and remove ignored files ([11d7f5e](https://github.com/eramitgupta/vue-toastification/commit/11d7f5e3b9135c0168372cec7cbafda4c712a984))
+
 All notable changes to this project will be documented in this file.
 
 ## [1.0.0] - 2025-12-26
