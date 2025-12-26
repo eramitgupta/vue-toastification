@@ -6,6 +6,10 @@ A lightweight, high-performance, and customizable Toast Notification library for
 ![Vue](https://img.shields.io/badge/Vue-3.x-green.svg)
 ![TypeScript](https://img.shields.io/badge/language-TypeScript-blue.svg)
 
+
+![erag-vue-toastification](https://github.com/user-attachments/assets/8816bf9b-8327-4e27-a6b3-56419cee9500)
+
+
 ## 🚀 Features
 
 - **Vue 3 Composition API** support.
