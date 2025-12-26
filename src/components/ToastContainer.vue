@@ -1,17 +1,20 @@
 <template>
-    <div class="erag-toast-container" :class="`erag-${state.position}`">
-        <TransitionGroup name="erag-toast-list">
-            <Toast
-                v-for="toast in state.toasts"
-                :key="toast.id"
-                :type="toast.type"
-                :title="toast.title"
-                :message="toast.message"
-                :duration="toast.duration"
-                @close="remove(toast.id)"
-            />
-        </TransitionGroup>
-    </div>
+  <div
+    class="erag-toast-container"
+    :class="`erag-${state.position}`"
+  >
+    <TransitionGroup name="erag-toast-list">
+      <Toast
+        v-for="toast in state.toasts"
+        :key="toast.id"
+        :type="toast.type"
+        :title="toast.title"
+        :message="toast.message"
+        :duration="toast.duration"
+        @close="remove(toast.id)"
+      />
+    </TransitionGroup>
+  </div>
 </template>
 
 <script setup lang="ts">
