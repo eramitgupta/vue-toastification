@@ -19,3 +19,11 @@ export interface ToastItem {
 export interface PluginOptions {
     position?: ToastPosition;
 }
+
+export interface ModalOptions {
+    title: string;
+    message: string;
+    confirmText?: string;
+    cancelText?: string;
+    type?: 'danger' | 'info' | 'warning';
+}

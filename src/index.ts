@@ -1,17 +1,18 @@
 import type { App, Plugin } from 'vue';
 import { createVNode, render } from 'vue';
 import ToastContainer from './components/ToastContainer.vue';
+import Modal from './components/Modal.vue';
 import { useToast } from './composables/useToast';
+import { useModal } from './composables/useModal';
 import type { PluginOptions } from './types';
 
-// Export everything for users
+
 export * from './types';
-export { useToast };
+export { useToast, useModal };
 
 const ToastPlugin: Plugin = {
     install(app: App, options: PluginOptions = {}) {
-        // 1. Create container in DOM
-        // Check if it already exists to avoid duplicates
+       // 1. Setup Toast Container
         if (!document.getElementById('erag-toast-container')) {
             const container = document.createElement('div');
             container.id = 'erag-toast-container';
@@ -22,13 +23,23 @@ const ToastPlugin: Plugin = {
             render(vnode, container);
         }
 
+        // 2. Setup Modal Container
+        if (!document.getElementById('erag-modal-container')) {
+            const modalContainer = document.createElement('div');
+            modalContainer.id = 'erag-modal-container';
+            document.body.appendChild(modalContainer);
+
+            // Render Modal Component
+            const modalVnode = createVNode(Modal);
+            render(modalVnode, modalContainer);
+        }
+
         // 3. Set default position
         if (options.position) {
             const { setPosition } = useToast();
             setPosition(options.position);
         }
 
-        // Optional: Global Property for Options API
         app.config.globalProperties.$toast = useToast();
     }
 };
