@@ -114,6 +114,9 @@ const handleApiRequest = async () => {
 
 ## 💬 Usage: Confirmation Modals (New!)
 
+![Adobe Express - Screen Recording 2025-12-28 at 12 29 39 PM](https://github.com/user-attachments/assets/757c30c7-a98f-4f8f-a66f-d9750ef82099)
+
+
 Use the `useModal` composable to trigger blocking confirmation dialogs. The `confirm()` method returns a **Promise** that resolves to `true` (Confirmed) or `false` (Cancelled).
 
 ### 1. Danger / Delete Action (Red Button)
