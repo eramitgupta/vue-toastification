@@ -214,16 +214,15 @@ const logout = async () => {
 | --------- | ------------------------- | ------------------ | --------------------------------------- |
 | `confirm` | `(options: ModalOptions)` | `Promise<boolean>` | Opens modal. Returns true if confirmed. |
 
-
 #### `ModalOptions` Interface
 
-| Property | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `title` | `string` | **Required** | The bold heading of the modal. |
-| `message` | `string` | **Required** | The descriptive text body. |
-| `confirmText` | `string` | `'Confirm'` | Label for the action button. |
-| `cancelText` | `string` | `'Cancel'` | Label for the cancel button. |
-| `type` | `'danger' \| 'warning' \| 'info'` | `'info'` | Controls button colors (Danger = Red, etc). |
+| Property      | Type                              | Default      | Description                                 |
+| :------------ | :-------------------------------- | :----------- | :------------------------------------------ |
+| `title`       | `string`                          | **Required** | The bold heading of the modal.              |
+| `message`     | `string`                          | **Required** | The descriptive text body.                  |
+| `confirmText` | `string`                          | `'Confirm'`  | Label for the action button.                |
+| `cancelText`  | `string`                          | `'Cancel'`   | Label for the cancel button.                |
+| `type`        | `'danger' \| 'warning' \| 'info'` | `'info'`     | Controls button colors (Danger = Red, etc). |
 
 ---
 

@@ -2,10 +2,9 @@
 
 ## [1.1.1](https://amit/eramitgupta/vue-toastification/compare/1.1.0...1.1.1) (2025-12-28)
 
-
 ### Bug Fixes
 
-* resolve toast removal id bug and add dynamic position support ([941edd6](https://amit/eramitgupta/vue-toastification/commits/941edd69ea5263ea2761b9f19e1357a26041af8e))
+- resolve toast removal id bug and add dynamic position support ([941edd6](https://amit/eramitgupta/vue-toastification/commits/941edd69ea5263ea2761b9f19e1357a26041af8e))
 
 # [1.1.0](https://amit/eramitgupta/vue-toastification/compare/1.0.3...1.1.0) (2025-12-28)
 

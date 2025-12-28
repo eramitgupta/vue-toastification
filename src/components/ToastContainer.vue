@@ -29,7 +29,6 @@ const { state, remove } = useToast();
 .erag-toast-container {
     position: fixed;
     z-index: 9999;
-    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
 }
@@ -76,5 +75,8 @@ const { state, remove } = useToast();
 }
 .erag-toast-list-leave-active {
     position: absolute;
+    opacity: 0 !important;
+    width: 320px !important;
+    z-index: -1 !important;
 }
 </style>
