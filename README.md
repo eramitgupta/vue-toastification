@@ -52,7 +52,6 @@ app.use(ToastPlugin, {
 });
 
 app.mount('#app');
-
 ```
 
 ---
@@ -83,7 +82,6 @@ Use the `useToast` composable to trigger non-blocking notifications.
         info('New update available.', 'Info');
     };
 </script>
-
 ```
 
 ### 2. Advanced: Dynamic Types (Handling API Responses)
@@ -100,18 +98,16 @@ const handleApiRequest = async () => {
     try {
         // Assume API returns: { status: 'success', message: 'Profile updated!' }
         const response = await api.updateProfile();
-        
+
         // 1. Cast the string to ToastType
-        const type = response.status as ToastType; 
-        
+        const type = response.status as ToastType;
+
         // 2. Dynamic Call: Automatically calls toast.success() or toast.error()
         toast[type](response.message, 'Notification');
-        
     } catch (err) {
         toast.error('Something went wrong');
     }
 };
-
 ```
 
 ---
@@ -169,7 +165,6 @@ const logout = async () => {
         // Perform logout logic
     }
 };
-
 ```
 
 ---
@@ -178,30 +173,30 @@ const logout = async () => {
 
 ### 1. `useToast()`
 
-| Method | Arguments | Description |
-| --- | --- | --- |
-| `success` | `(msg: string, title?: string, duration?: number)` | Triggers a green success toast. |
-| `error` | `(msg: string, title?: string, duration?: number)` | Triggers a red error toast. |
-| `warning` | `(msg: string, title?: string, duration?: number)` | Triggers an orange warning toast. |
-| `info` | `(msg: string, title?: string, duration?: number)` | Triggers a blue info toast. |
-| `setPosition` | `(position: ToastPosition)` | Updates the global container position. |
-| `remove` | `(id: number)` | Manually removes a specific toast by ID. |
+| Method        | Arguments                                          | Description                              |
+| ------------- | -------------------------------------------------- | ---------------------------------------- |
+| `success`     | `(msg: string, title?: string, duration?: number)` | Triggers a green success toast.          |
+| `error`       | `(msg: string, title?: string, duration?: number)` | Triggers a red error toast.              |
+| `warning`     | `(msg: string, title?: string, duration?: number)` | Triggers an orange warning toast.        |
+| `info`        | `(msg: string, title?: string, duration?: number)` | Triggers a blue info toast.              |
+| `setPosition` | `(position: ToastPosition)`                        | Updates the global container position.   |
+| `remove`      | `(id: number)`                                     | Manually removes a specific toast by ID. |
 
 ### 2. `useModal()`
 
-| Method | Arguments | Returns | Description |
-| --- | --- | --- | --- |
+| Method    | Arguments                 | Returns            | Description                             |
+| --------- | ------------------------- | ------------------ | --------------------------------------- |
 | `confirm` | `(options: ModalOptions)` | `Promise<boolean>` | Opens modal. Returns true if confirmed. |
 
 #### `ModalOptions` Interface
 
-| Property | Type | Default | Description |
-| --- | --- | --- | --- |
-| `title` | `string` | (Required) | The bold heading of the modal. |
-| `message` | `string` | (Required) | The descriptive text body. |
-| `confirmText` | `string` | `'Confirm'` | Label for the action button. |
-| `cancelText` | `string` | `'Cancel'` | Label for the cancel button. |
-| `type` | `'danger' | 'warning' | 'info'` | `'info'` | Controls button colors (Danger = Red, etc). |
+| Property      | Type      | Default     | Description                    |
+| ------------- | --------- | ----------- | ------------------------------ | -------- | ------------------------------------------- |
+| `title`       | `string`  | (Required)  | The bold heading of the modal. |
+| `message`     | `string`  | (Required)  | The descriptive text body.     |
+| `confirmText` | `string`  | `'Confirm'` | Label for the action button.   |
+| `cancelText`  | `string`  | `'Cancel'`  | Label for the cancel button.   |
+| `type`        | `'danger' | 'warning'   | 'info'`                        | `'info'` | Controls button colors (Danger = Red, etc). |
 
 ---
 
@@ -209,9 +204,9 @@ const logout = async () => {
 
 This library uses the **`erag-`** prefix for all CSS classes to ensure it never breaks your existing UI.
 
-* **Toast Container**: `.erag-toast-container`
-* **Modal Backdrop**: `.erag-modal-backdrop`
-* **Buttons**: `.erag-btn-confirm`, `.erag-btn-cancel`
+- **Toast Container**: `.erag-toast-container`
+- **Modal Backdrop**: `.erag-modal-backdrop`
+- **Buttons**: `.erag-btn-confirm`, `.erag-btn-cancel`
 
 ---
 

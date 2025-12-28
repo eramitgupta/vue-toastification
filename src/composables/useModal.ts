@@ -1,4 +1,4 @@
-import { reactive, ref } from 'vue';
+import { reactive } from 'vue';
 import type { ModalOptions } from '../types';
 
 const state = reactive({
@@ -15,7 +15,6 @@ const state = reactive({
 let resolvePromise: (value: boolean) => void;
 
 export const useModal = () => {
-
     const confirm = (options: ModalOptions): Promise<boolean> => {
         state.options = { ...state.options, ...options };
         state.isOpen = true;

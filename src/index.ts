@@ -6,13 +6,12 @@ import { useToast } from './composables/useToast';
 import { useModal } from './composables/useModal';
 import type { PluginOptions } from './types';
 
-
 export * from './types';
 export { useToast, useModal };
 
 const ToastPlugin: Plugin = {
     install(app: App, options: PluginOptions = {}) {
-       // 1. Setup Toast Container
+        // 1. Setup Toast Container
         if (!document.getElementById('erag-toast-container')) {
             const container = document.createElement('div');
             container.id = 'erag-toast-container';

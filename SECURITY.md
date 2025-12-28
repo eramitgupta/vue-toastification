@@ -25,7 +25,7 @@ We will send you a confirmation once the fix is released.
 
 ## Disclosure Policy
 
-* We ask that you do not disclose the vulnerability to the public until a fix has been released.
-* We will give credit to the researcher who reported the vulnerability (if desired) in the release notes.
+- We ask that you do not disclose the vulnerability to the public until a fix has been released.
+- We will give credit to the researcher who reported the vulnerability (if desired) in the release notes.
 
 Thank you for helping keep [Project Name] safe!
