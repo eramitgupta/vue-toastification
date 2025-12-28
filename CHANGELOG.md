@@ -2,13 +2,12 @@
 
 # [1.1.0](https://amit/eramitgupta/vue-toastification/compare/1.0.3...1.1.0) (2025-12-28)
 
-
 ### Features
 
-* add promise-based confirmation modal and update docs ([98b6744](https://amit/eramitgupta/vue-toastification/commits/98b67444e2d97cda45406e5ed69d6b90545e9a16))
-* add promise-based confirmation modal and update docs ([ab98c1c](https://amit/eramitgupta/vue-toastification/commits/ab98c1c613cfc7ef009b7d542675498f75646f54))
-* add promise-based confirmation modal and update docs ([c583058](https://amit/eramitgupta/vue-toastification/commits/c5830586b92c4647a7ef5969f870b9b1e31f0f40))
-* update ([702d24b](https://amit/eramitgupta/vue-toastification/commits/702d24be6ca7035897c90cda811aec1151ffe53e))
+- add promise-based confirmation modal and update docs ([98b6744](https://amit/eramitgupta/vue-toastification/commits/98b67444e2d97cda45406e5ed69d6b90545e9a16))
+- add promise-based confirmation modal and update docs ([ab98c1c](https://amit/eramitgupta/vue-toastification/commits/ab98c1c613cfc7ef009b7d542675498f75646f54))
+- add promise-based confirmation modal and update docs ([c583058](https://amit/eramitgupta/vue-toastification/commits/c5830586b92c4647a7ef5969f870b9b1e31f0f40))
+- update ([702d24b](https://amit/eramitgupta/vue-toastification/commits/702d24be6ca7035897c90cda811aec1151ffe53e))
 
 ## [1.0.3](https://github.com/eramitgupta/vue-toastification/compare/1.0.2...1.0.3) (2025-12-26)
 

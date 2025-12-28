@@ -14,8 +14,19 @@ const state = reactive<ToastState>({
 let count = 0;
 
 export const useToast = () => {
-    const show = (type: ToastType, title: string, message: string, duration: number = 4500) => {
+    const show = (
+        type: ToastType,
+        title: string,
+        message: string,
+        duration: number = 4500,
+        position?: ToastPosition
+    ) => {
         const id = count++;
+
+        if (position) {
+            state.position = position;
+        }
+
         const toast: ToastItem = {
             id,
             type,
@@ -49,13 +60,28 @@ export const useToast = () => {
         show,
         remove,
         setPosition,
-        success: (msg: string, title: string = 'Success', duration?: number) =>
-            show('success', title, msg, duration),
-        error: (msg: string, title: string = 'Error', duration?: number) =>
-            show('error', title, msg, duration),
-        warning: (msg: string, title: string = 'Warning', duration?: number) =>
-            show('warning', title, msg, duration),
-        info: (msg: string, title: string = 'Info', duration?: number) =>
-            show('info', title, msg, duration)
+        success: (
+            msg: string,
+            title: string = 'Success',
+            duration?: number,
+            position?: ToastPosition
+        ) => show('success', title, msg, duration, position),
+
+        error: (
+            msg: string,
+            title: string = 'Error',
+            duration?: number,
+            position?: ToastPosition
+        ) => show('error', title, msg, duration, position),
+
+        warning: (
+            msg: string,
+            title: string = 'Warning',
+            duration?: number,
+            position?: ToastPosition
+        ) => show('warning', title, msg, duration, position),
+
+        info: (msg: string, title: string = 'Info', duration?: number, position?: ToastPosition) =>
+            show('info', title, msg, duration, position)
     };
 };

@@ -13,6 +13,7 @@ A lightweight, high-performance **Toast Notification** and **Confirmation Modal*
 
 - **Vue 3 Composition API** support (`useToast`, `useModal`).
 - **Promise-based Modals**: Await user confirmation directly in your code (no callbacks needed).
+- **Smooth Animations**: Apple-style smooth entry, exit, and gap-filling transitions.
 - **Fully Typed** with TypeScript.
 - **Lightweight** & Zero dependencies.
 - **Scoped CSS**: Uses `erag-` prefix to prevent CSS conflicts with Bootstrap, Tailwind, etc.
@@ -110,12 +111,34 @@ const handleApiRequest = async () => {
 };
 ```
 
+### 3. Changing Position Dynamically
+
+You can change the position globally or for a specific toast.
+
+**Available Positions:**
+`top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`.
+
+```typescript
+const { setPosition, success, info } = useToast();
+
+// Method 1: Change Global Position (Affects all future toasts)
+const updatePosition = () => {
+    setPosition('top-center');
+};
+
+// Method 2: Pass Position to a specific Toast (One-time override)
+const showCustomToast = () => {
+    // success(msg, title, duration, position)
+    success('I am shown at Top Left!', 'Custom Position', 4000, 'top-left');
+
+    // You can also pass undefined for duration to use default
+    info('I am at Bottom Center', 'Info', undefined, 'bottom-center');
+};
+```
+
 ---
 
 ## 💬 Usage: Confirmation Modals (New!)
-
-![Adobe Express - Screen Recording 2025-12-28 at 12 29 39 PM](https://github.com/user-attachments/assets/757c30c7-a98f-4f8f-a66f-d9750ef82099)
-
 
 Use the `useModal` composable to trigger blocking confirmation dialogs. The `confirm()` method returns a **Promise** that resolves to `true` (Confirmed) or `false` (Cancelled).
 
@@ -176,14 +199,14 @@ const logout = async () => {
 
 ### 1. `useToast()`
 
-| Method        | Arguments                                          | Description                              |
-| ------------- | -------------------------------------------------- | ---------------------------------------- |
-| `success`     | `(msg: string, title?: string, duration?: number)` | Triggers a green success toast.          |
-| `error`       | `(msg: string, title?: string, duration?: number)` | Triggers a red error toast.              |
-| `warning`     | `(msg: string, title?: string, duration?: number)` | Triggers an orange warning toast.        |
-| `info`        | `(msg: string, title?: string, duration?: number)` | Triggers a blue info toast.              |
-| `setPosition` | `(position: ToastPosition)`                        | Updates the global container position.   |
-| `remove`      | `(id: number)`                                     | Manually removes a specific toast by ID. |
+| Method        | Arguments                                                                    | Description                              |
+| ------------- | ---------------------------------------------------------------------------- | ---------------------------------------- |
+| `success`     | `(msg: string, title?: string, duration?: number, position?: ToastPosition)` | Triggers a green success toast.          |
+| `error`       | `(msg: string, title?: string, duration?: number, position?: ToastPosition)` | Triggers a red error toast.              |
+| `warning`     | `(msg: string, title?: string, duration?: number, position?: ToastPosition)` | Triggers an orange warning toast.        |
+| `info`        | `(msg: string, title?: string, duration?: number, position?: ToastPosition)` | Triggers a blue info toast.              |
+| `setPosition` | `(position: ToastPosition)`                                                  | Updates the global container position.   |
+| `remove`      | `(id: number)`                                                               | Manually removes a specific toast by ID. |
 
 ### 2. `useModal()`
 
@@ -202,6 +225,7 @@ const logout = async () => {
 | `cancelText` | `string` | `'Cancel'` | Label for the cancel button. |
 | `type` | `'danger' \| 'warning' \| 'info'` | `'info'` | Controls button colors (Danger = Red, etc). |
 
+---
 
 ## 🛡️ CSS & Styling
 

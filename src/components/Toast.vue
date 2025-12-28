@@ -11,7 +11,10 @@
       v-html="currentIcon"
     />
 
-    <div class="erag-toast-content">
+    <div
+      class="erag-toast-content"
+      :class="{ 'erag-single-line': isSingleLine }"
+    >
       <strong>{{ title }}</strong>
       <span>{{ message }}</span>
     </div>
@@ -40,6 +43,7 @@ import { icons } from '../icons';
 import type { ToastType } from '../types';
 
 const props = defineProps<{
+    id: number;
     type: ToastType;
     title: string;
     message: string;
@@ -47,11 +51,19 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-    (e: 'close'): void;
+    (e: 'close', id: number): void;
 }>();
 
 const isMounted = ref(false);
 const currentIcon = computed(() => icons[props.type] || icons.info);
+
+const isSingleLine = computed(() => {
+    const hasTitle = props.title && props.title.trim().length > 0;
+    const hasMessage = props.message && props.message.trim().length > 0;
+
+    return !hasTitle || !hasMessage;
+});
+
 let timer: ReturnType<typeof setTimeout> | null = null;
 
 onMounted(() => {
@@ -68,7 +80,7 @@ const startTimer = () => {
 };
 
 const closeToast = () => {
-    emit('close');
+    emit('close', props.id);
 };
 
 const pauseTimer = () => {
@@ -163,6 +175,29 @@ onBeforeUnmount(() => {
 }
 .erag-toast-content span {
     font-size: 12px;
+    opacity: 0.9;
+    line-height: 1.2;
+}
+
+.erag-toast-content.erag-single-line {
+    padding: 17px 0;
+}
+
+.erag-toast-content strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 2px;
+    color: inherit;
+    line-height: 1.2;
+}
+
+/* Agar single line hai, to margin hata do taki center lage */
+.erag-toast-content.erag-single-line strong {
+    margin-bottom: 0;
+}
+
+.erag-toast-content span {
+    font-size: 16px;
     opacity: 0.9;
     line-height: 1.2;
 }

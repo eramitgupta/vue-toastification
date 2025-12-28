@@ -6,6 +6,7 @@
     <TransitionGroup name="erag-toast-list">
       <Toast
         v-for="toast in state.toasts"
+        :id="toast.id"
         :key="toast.id"
         :type="toast.type"
         :title="toast.title"
