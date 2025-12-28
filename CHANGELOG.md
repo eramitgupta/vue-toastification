@@ -2,10 +2,9 @@
 
 ## [1.1.2](https://amit/eramitgupta/vue-toastification/compare/1.1.1...1.1.2) (2025-12-28)
 
-
 ### Bug Fixes
 
-* resolve animation stuck issue when removing the last toast ([eb9deb6](https://amit/eramitgupta/vue-toastification/commits/eb9deb65f7806f61d780ecba9abf846e2b15522c))
+- resolve animation stuck issue when removing the last toast ([eb9deb6](https://amit/eramitgupta/vue-toastification/commits/eb9deb65f7806f61d780ecba9abf846e2b15522c))
 
 ## [1.1.1](https://amit/eramitgupta/vue-toastification/compare/1.1.0...1.1.1) (2025-12-28)
 

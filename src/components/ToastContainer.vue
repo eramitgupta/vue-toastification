@@ -61,22 +61,4 @@ const { state, remove } = useToast();
     bottom: 20px;
     right: 20px;
 }
-
-/* Transition Group Styles (Prefix Added) */
-.erag-toast-list-move,
-.erag-toast-list-enter-active,
-.erag-toast-list-leave-active {
-    transition: all 0.4s ease;
-}
-.erag-toast-list-enter-from,
-.erag-toast-list-leave-to {
-    opacity: 0;
-    transform: translateX(30px);
-}
-.erag-toast-list-leave-active {
-    position: absolute;
-    opacity: 0 !important;
-    width: 320px !important;
-    z-index: -1 !important;
-}
 </style>
