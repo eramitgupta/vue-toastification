@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.1.4](https://amit/eramitgupta/vue-toastification/compare/1.1.3...1.1.4) (2026-02-05)
+
 ## [1.1.3](https://amit/eramitgupta/vue-toastification/compare/1.1.2...1.1.3) (2025-12-28)
 
 
