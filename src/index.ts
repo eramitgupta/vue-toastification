@@ -1,13 +1,13 @@
 import type { App, Plugin } from 'vue';
 import { createVNode, render } from 'vue';
 import ToastContainer from './components/ToastContainer.vue';
-import Modal from './components/Modal.vue';
+import ConfirmationBox from './components/ConfirmationBox.vue';
 import { useToast } from './composables/useToast';
-import { useModal } from './composables/useModal';
+import { useConfirmation } from './composables/useConfirmation';
 import type { PluginOptions } from './types';
 
 export * from './types';
-export { useToast, useModal };
+export { useToast, useConfirmation };
 
 const ToastPlugin: Plugin = {
     install(app: App, options: PluginOptions = {}) {
@@ -29,7 +29,7 @@ const ToastPlugin: Plugin = {
             document.body.appendChild(modalContainer);
 
             // Render Modal Component
-            const modalVnode = createVNode(Modal);
+            const modalVnode = createVNode(ConfirmationBox);
             render(modalVnode, modalContainer);
         }
 

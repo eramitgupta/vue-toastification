@@ -20,10 +20,13 @@ export interface PluginOptions {
     position?: ToastPosition;
 }
 
+export type ModalType = 'danger' | 'info' | 'warning' | 'success';
+
 export interface ModalOptions {
     title: string;
     message: string;
     confirmText?: string;
     cancelText?: string;
-    type?: 'danger' | 'info' | 'warning';
+    type?: ModalType;
+    icon?: string;
 }

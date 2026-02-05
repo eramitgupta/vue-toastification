@@ -11,7 +11,7 @@ A lightweight, high-performance **Toast Notification** and **Confirmation Modal*
 
 ## 🚀 Features
 
-- **Vue 3 Composition API** support (`useToast`, `useModal`).
+- **Vue 3 Composition API** support (`useToast`, `useConfirmation`).
 - **Promise-based Modals**: Await user confirmation directly in your code (no callbacks needed).
 - **Smooth Animations**: Apple-style smooth entry, exit, and gap-filling transitions.
 - **Fully Typed** with TypeScript.
@@ -140,7 +140,7 @@ const showCustomToast = () => {
 
 ## 💬 Usage: Confirmation Modals (New!)
 
-Use the `useModal` composable to trigger blocking confirmation dialogs. The `confirm()` method returns a **Promise** that resolves to `true` (Confirmed) or `false` (Cancelled).
+Use the `useConfirmation` composable to trigger blocking confirmation dialogs. The `confirm()` method returns a **Promise** that resolves to `true` (Confirmed) or `false` (Cancelled).
 
 ### 1. Danger / Delete Action (Red Button)
 
@@ -148,9 +148,9 @@ Use `type: 'danger'` for destructive actions like deleting data.
 
 ```typescript
 <script setup lang="ts">
-import { useModal, useToast } from '@erag/vue-toastification';
+import { useConfirmation, useToast } from '@erag/vue-toastification';
 
-const modal = useModal();
+const modal = useConfirmation();
 const toast = useToast();
 
 const handleDelete = async () => {
@@ -208,7 +208,7 @@ const logout = async () => {
 | `setPosition` | `(position: ToastPosition)`                                                  | Updates the global container position.   |
 | `remove`      | `(id: number)`                                                               | Manually removes a specific toast by ID. |
 
-### 2. `useModal()`
+### 2. `useConfirmation()`
 
 | Method    | Arguments                 | Returns            | Description                             |
 | --------- | ------------------------- | ------------------ | --------------------------------------- |
